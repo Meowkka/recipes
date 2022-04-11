@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:postgres/postgres.dart';
 import 'package:recipes/recipe_button.dart';
 
@@ -29,10 +30,12 @@ Future<void> fetchToRequest () async{
 }
 
 
+
+
 void setRecipes(){
   for (final row in results) {
     print('${row[0]} ${row[5]}');
-    recipes.add(RecipeButton(row[5],row[4]));
+    recipes.add(RecipeButton(Key(row[0].toString()),row[5],row[4],Icon(Icons.star_border)));
   }
 }
 

@@ -70,10 +70,6 @@ class _RecipesScreenState extends State<RecipesScreen> {
                         children: recipes,
                         mainAxisAlignment: MainAxisAlignment.center,
                       ),
-                      Row(
-                        children: recipes,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                      ),
                     ],
                   ),
                 ),
