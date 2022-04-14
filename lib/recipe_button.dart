@@ -18,47 +18,48 @@ class _RecipeButtonState extends State<RecipeButton> {
 
   @override
   Widget build(BuildContext context) {
-
-    return Column(
-      children: [
-        Stack(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(
-                    widget.url,
+    return Container(
+      width: 180,
+      child: Column(
+        children: [
+          Stack(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: NetworkImage(
+                      widget.url,
+                    ),
+                    fit: BoxFit.fitHeight,
                   ),
-                  fit: BoxFit.fitHeight,
+                  borderRadius: BorderRadius.circular(5.0),
                 ),
-                borderRadius: BorderRadius.circular(5.0),
+                margin: EdgeInsets.all(10),
+                height: 140,
+                //child: Image.network()
               ),
-              height: 160,
-              width: 160,
-              margin: EdgeInsets.all(10),
-              //child: Image.network()
-            ),
-            Align(
-              alignment: Alignment.topRight,
-              child: IconButton(
-                icon: widget.icon,
-                color: Colors.yellow,
-                onPressed: (){
-                  setState(() {
-                    if (widget.icon.icon.toString() ==
-                        Icons.star_border.toString()) {
-                      widget.icon = Icon(Icons.star);
-                    } else {
-                      widget.icon = Icon(Icons.star_border);
-                    }
-                  });
-                },
+              Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                  icon: widget.icon,
+                  color: Colors.yellow,
+                  onPressed: (){
+                    setState(() {
+                      if (widget.icon.icon.toString() ==
+                          Icons.star_border.toString()) {
+                        widget.icon = Icon(Icons.star);
+                      } else {
+                        widget.icon = Icon(Icons.star_border);
+                      }
+                    });
+                  },
+                ),
               ),
-            )
-          ],
-        ),
-        Text(widget.title),
-      ],
+            ],
+          ),
+          Text(widget.title),
+        ],
+      ),
     );
   }
 }

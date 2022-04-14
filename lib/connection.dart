@@ -29,13 +29,13 @@ Future<void> fetchToRequest () async{
  print('Executed');
 }
 
-
-
-
 void setRecipes(){
   for (final row in results) {
     print('${row[0]} ${row[5]}');
     recipes.add(RecipeButton(Key(row[0].toString()),row[5],row[4],Icon(Icons.star_border)));
   }
 }
+
+
+
 
